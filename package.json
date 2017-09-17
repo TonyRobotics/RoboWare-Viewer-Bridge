@@ -1,0 +1,35 @@
+{
+  "name": "roboware_viewer_bridge",
+  "version": "1.0.0",
+  "description": "roboware viewer bridge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "roboware",
+    "viewer",
+    "bridge"
+  ],
+  "author": "abner.zhang",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "argparse": "1.0.7",
+    "async": "2.0.1",
+    "bn.js": "^4.11.6",
+    "body-parser": "^1.17.2",
+    "bunyan": "1.8.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "md5": "2.1.0",
+    "moment": "2.12.0",
+    "mosca": "^2.5.2",
+    "multer": "^1.3.0",
+    "request": "^2.81.0",
+    "ultron": "1.1.0",
+    "walker": "1.0.7",
+    "xmlrpc": "chfritz/node-xmlrpc",
+    "rosnodejs": "2.1.1"
+    
+  }
+}
