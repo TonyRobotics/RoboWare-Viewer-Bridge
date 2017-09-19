@@ -149,6 +149,25 @@ rosnodejs.initNode('/roboware_viewer_bridge', {onTheFly: true}).then((rosNode) =
       //client.end()
   })
 
+  //小乌龟
+  //订阅[MQTT]Topic
+  client.subscribe("/turtle1/cmd_vel")
+  //接收[MQTT]订阅消息
+  client.on("message", function (topic, payload) {
+      console.log(topic);  
+      let cmd_vel = rosNode.advertise('/turtle1/cmd_vel','geometry_msgs/Twist', {
+          queueSize: 1,
+          latching: true,
+          throttleMs: 9
+      });
+      const Twist = rosnodejs.require('geometry_msgs').msg.Twist;
+      const msgTwist1 = JSON.parse(payload);
+      console.log(msgTwist1);
+      //发布[ROS]消息
+      cmd_vel.publish(msgTwist1);
+      //client.end()
+  })  
+ 
   if(window.WebSocket){
       console.log('This browser supports WebSocket');
   }else{
